@@ -9,25 +9,20 @@ pipeline {
                         sh 'make'
                         
                         stage('Permissions') {
-                            steps {
-                                script {
-                                    sh 'chmod +x StringInverser.c' 
-                                }
-                            }
+                          
+                            sh 'chmod +x StringInverser.c' 
                         }
                         
                         stage('Nettoyage') {
-                            steps {
-                                sh 'make clean'
-                            }
+                           
+                            sh 'make clean'
                         }
                     } else {
                         bat 'make'
                         
                         stage('Nettoyage') {
-                            steps {
-                                bat 'make clean'
-                            }
+                           
+                            bat 'make clean'
                         }
                     }
                 }
